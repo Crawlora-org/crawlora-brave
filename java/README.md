@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted Brave Search API. It calls Crawlo
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-brave</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
