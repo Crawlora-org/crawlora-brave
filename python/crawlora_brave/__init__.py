@@ -6,7 +6,7 @@ from .operations import OPERATION_COUNT, OPERATION_IDS, PLATFORM
 
 Client = BraveClient
 AsyncClient = AsyncBraveClient
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 DISPLAY_NAME = 'Brave Search'
 PLATFORM = 'brave'
 CONTRACT_REVISION = 'sha256:2548401e77b60108e6195aa3c83842dc0c1caa7f04e8c777b61ccab2ca397777'
