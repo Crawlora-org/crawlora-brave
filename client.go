@@ -1,4 +1,4 @@
-// Package brave is a focused Go client for Crawlora's Brave Search endpoints.
+// Package brave is Crawlora's Brave Search API client for 5 endpoints, covering web, news, image, and video search plus query suggestions.
 // API documentation: https://crawlora.net/docs?utm_source=pkg.go.dev&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-go-api-docs
 package brave
 

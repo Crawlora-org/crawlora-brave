@@ -3,8 +3,8 @@ require_relative "lib/crawlora/brave/version"
 Gem::Specification.new do |spec|
   spec.name = "crawlora-brave"
   spec.version = Crawlora::Brave::VERSION
-  spec.summary = "Brave Search client for the Crawlora hosted API"
-  spec.description = "Credential-free Brave Search API access through Crawlora's hosted service."
+  spec.summary = "Brave Search API client for Crawlora (5 endpoints)"
+  spec.description = "Ruby client for Crawlora's hosted Brave Search API. Covers web, news, image, and video search plus query suggestions across 5 endpoints."
   spec.authors = ["Crawlora"]
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6"

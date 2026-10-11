@@ -1,7 +1,6 @@
-# crawlora-brave
+# crawlora-brave — Brave Search API client for Python
 
-Python client for Crawlora's hosted Brave Search API. It calls Crawlora's
-service at [Crawlora](https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-python-homepage); it does not run a browser or scrape
+Python client for Crawlora's hosted Brave Search API. It exposes 5 API endpoints covering web, news, image, and video search plus query suggestions. Requests go to [Crawlora](https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-python-homepage); the package does not run a browser or scrape
 Brave Search locally. A Crawlora account and `CRAWLORA_API_KEY` are required,
 and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by
 Brave Search or its owners.
@@ -67,6 +66,18 @@ asyncio.run(main())
 ```
 
 See the [runnable example](https://github.com/Crawlora-org/crawlora-brave/blob/main/examples/python.py) for a complete usage example.
+
+## Supported Brave Search API endpoints
+
+This package exposes every route below through direct snake_case methods and the `brave` group. See the [endpoint and parameter reference](https://github.com/Crawlora-org/crawlora-brave/blob/main/docs/usage.md) for complete input details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/brave/images` | `brave-images` | Search Brave image results |
+| `GET` | `/brave/news` | `brave-news` | Search Brave news results |
+| `GET` | `/brave/search` | `brave-search` | Search Brave |
+| `GET` | `/brave/suggest` | `brave-suggest` | Suggest Brave search queries |
+| `GET` | `/brave/videos` | `brave-videos` | Search Brave video results |
 
 ## Configuration
 

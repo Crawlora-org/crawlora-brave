@@ -1,6 +1,6 @@
-# Crawlora Brave Search PHP client
+# Crawlora Brave Search API client for PHP (`crawlora/brave`)
 
-This package calls the Crawlora hosted API at `https://api.crawlora.net/api/v1`. It does not call or scrape Brave Search directly. Requests require a Crawlora API key and use your Crawlora account's service plan.
+This PHP package calls Crawlora's hosted Brave Search API at `https://api.crawlora.net/api/v1`. It exposes 5 endpoints covering web, news, image, and video search plus query suggestions. It does not call or scrape Brave Search directly. Requests require a Crawlora API key and use your Crawlora account's service plan.
 
 ## Install
 
@@ -21,5 +21,17 @@ $client->close();
 ```
 
 The client uses PHP cURL and JSON. Constructor options are `apiKey`, `baseUrl`, and `timeout`. Call the operation-specific method for direct access to each supported operation, or `request($operationId, $params, $responseType)` to dispatch by operation ID. Set `$responseType` to `text` for raw text output such as transcript formats. The package includes 5 API operations.
+
+## Supported Brave Search API endpoints
+
+Browse every route included in this Composer package. The [endpoint reference](https://github.com/Crawlora-org/crawlora-brave/blob/main/docs/usage.md) includes parameter and response details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/brave/images` | `brave-images` | Search Brave image results |
+| `GET` | `/brave/news` | `brave-news` | Search Brave news results |
+| `GET` | `/brave/search` | `brave-search` | Search Brave |
+| `GET` | `/brave/suggest` | `brave-suggest` | Suggest Brave search queries |
+| `GET` | `/brave/videos` | `brave-videos` | Search Brave video results |
 
 See [Crawlora](https://crawlora.net/?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-php-homepage), the [API documentation](https://crawlora.net/docs?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-php-api-docs), and the [PHP client source](https://github.com/Crawlora-org/crawlora-brave). The complete operation and parameter reference is in the [platform repository](https://github.com/Crawlora-org/crawlora-brave/blob/main/docs/usage.md).

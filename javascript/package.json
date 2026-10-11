@@ -1,10 +1,10 @@
 {
   "name": "@crawlora-org/brave",
   "version": "0.1.1",
-  "description": "Typed JavaScript client for the Crawlora Brave Search API",
+  "description": "Crawlora Brave Search API client with 5 endpoints for web, news, image, and video search plus query suggestions",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-brave/issues" },
-  "keywords": ["crawlora", "api-client", "web-scraping", "brave", "typescript"],
+  "keywords": ["crawlora", "api-client", "web-scraping", "brave", "brave-search", "web", "news", "image", "video-search-query-suggestions"],
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
