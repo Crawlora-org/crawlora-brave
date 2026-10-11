@@ -1,0 +1,1418 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "brave.Discussion": {
+      "properties": {
+        "age": {
+          "example": "October 24, 2024",
+          "type": "string"
+        },
+        "comment_count": {
+          "example": 30,
+          "type": "integer"
+        },
+        "description": {
+          "example": "I have free time from highschool and want to get into coding, and tips on diving in and learning.",
+          "type": "string"
+        },
+        "favicon": {
+          "example": "https://imgs.search.brave.com/example-reddit.ico",
+          "type": "string"
+        },
+        "forum": {
+          "example": "r/pythontips",
+          "type": "string"
+        },
+        "hostname": {
+          "example": "www.reddit.com",
+          "type": "string"
+        },
+        "path": {
+          "example": "r > pythontips > comments > 1gav6bm > how_to_learn_python",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "score": {
+          "example": 25,
+          "type": "integer"
+        },
+        "title": {
+          "example": "How to learn python",
+          "type": "string"
+        },
+        "top_comment": {
+          "example": "r/learnpython",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://www.reddit.com/r/pythontips/comments/1gav6bm/how_to_learn_python/",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.ImageResult": {
+      "properties": {
+        "age": {
+          "example": "2026-05-16T12:01:29Z",
+          "type": "string"
+        },
+        "height": {
+          "example": 1184,
+          "type": "integer"
+        },
+        "image_url": {
+          "example": "https://example.com/openai.jpg",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "source": {
+          "example": "area17.com",
+          "type": "string"
+        },
+        "thumbnail": {
+          "example": "https://imgs.search.brave.com/example",
+          "type": "string"
+        },
+        "title": {
+          "example": "OpenAI colors mobile 08",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://area17.com/clients/openai",
+          "type": "string"
+        },
+        "width": {
+          "example": 1000,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "brave.ImagesResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/brave.SearchPagination"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/brave.ImageResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "brave.KnowledgeCard": {
+      "properties": {
+        "category": {
+          "example": "computer program",
+          "type": "string"
+        },
+        "description": {
+          "example": "computer program that produces the message \"Hello, world!\", often used to illustrate the basic syntax of a programming language",
+          "type": "string"
+        },
+        "image": {
+          "example": "https://imgs.search.brave.com/example-card.png",
+          "type": "string"
+        },
+        "long_description": {
+          "example": "A \"Hello, World!\" program is usually a simple computer program that displays on the screen a message similar to \"Hello, World!\".",
+          "type": "string"
+        },
+        "provider": {
+          "$ref": "#/definitions/brave.KnowledgeCardProvider"
+        },
+        "title": {
+          "example": "\"Hello, World!\" program",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.KnowledgeCardProvider": {
+      "properties": {
+        "icon": {
+          "example": "https://imgs.search.brave.com/example-provider.ico",
+          "type": "string"
+        },
+        "name": {
+          "example": "Wikipedia",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.NewsResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/brave.SearchPagination"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/brave.NewsResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "brave.NewsResult": {
+      "properties": {
+        "age": {
+          "example": "2 hours ago",
+          "type": "string"
+        },
+        "description": {
+          "example": "OpenAI announced an update.",
+          "type": "string"
+        },
+        "favicon": {
+          "example": "https://imgs.search.brave.com/example.ico",
+          "type": "string"
+        },
+        "hostname": {
+          "example": "www.example.com",
+          "type": "string"
+        },
+        "path": {
+          "example": "technology > ai",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "source": {
+          "example": "Reuters",
+          "type": "string"
+        },
+        "thumbnail": {
+          "example": "https://imgs.search.brave.com/example-thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "OpenAI announces update",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://example.com/openai-news",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.SearchPagination": {
+      "properties": {
+        "next_offset": {
+          "example": 1,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "previous_offset": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "brave.SearchResponse": {
+      "properties": {
+        "discussions": {
+          "items": {
+            "$ref": "#/definitions/brave.Discussion"
+          },
+          "type": "array"
+        },
+        "knowledge_card": {
+          "$ref": "#/definitions/brave.KnowledgeCard"
+        },
+        "pagination": {
+          "$ref": "#/definitions/brave.SearchPagination"
+        },
+        "related_queries": {
+          "example": [
+            "hello world anime",
+            "hello world code"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/brave.SearchResult"
+          },
+          "type": "array"
+        },
+        "videos": {
+          "items": {
+            "$ref": "#/definitions/brave.VideoResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "brave.SearchResult": {
+      "properties": {
+        "age": {
+          "example": "1 day ago",
+          "type": "string"
+        },
+        "description": {
+          "example": "OpenAI helps you build and deploy AI systems.",
+          "type": "string"
+        },
+        "favicon": {
+          "example": "https://imgs.search.brave.com/example.ico",
+          "type": "string"
+        },
+        "hostname": {
+          "example": "openai.com",
+          "type": "string"
+        },
+        "path": {
+          "example": "research > index",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "title": {
+          "example": "OpenAI",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://openai.com/",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.SuggestResponse": {
+      "properties": {
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "suggestions": {
+          "items": {
+            "$ref": "#/definitions/brave.SuggestionResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "brave.SuggestionEntity": {
+      "properties": {
+        "category": {
+          "example": "person",
+          "type": "string"
+        },
+        "description": {
+          "example": "American singer-songwriter (born 1989)",
+          "type": "string"
+        },
+        "image_url": {
+          "example": "https://imgs.search.brave.com/example.jpg",
+          "type": "string"
+        },
+        "logo": {
+          "example": false,
+          "type": "boolean"
+        },
+        "name": {
+          "example": "Taylor Swift",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.SuggestionResult": {
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/brave.SuggestionEntity"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "query": {
+          "example": "openai api",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.VideoResult": {
+      "properties": {
+        "age": {
+          "example": "March 24, 2024",
+          "type": "string"
+        },
+        "creator": {
+          "example": "Train To Code",
+          "type": "string"
+        },
+        "description": {
+          "example": "Introducing you to 15 of the most popular programming languages in the world, by writing hello world to the console.",
+          "type": "string"
+        },
+        "duration": {
+          "example": "08:47",
+          "type": "string"
+        },
+        "favicon": {
+          "example": "https://imgs.search.brave.com/example-youtube.ico",
+          "type": "string"
+        },
+        "hostname": {
+          "example": "www.youtube.com",
+          "type": "string"
+        },
+        "path": {
+          "example": "watch",
+          "type": "string"
+        },
+        "platform": {
+          "example": "YouTube",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "thumbnail": {
+          "example": "https://imgs.search.brave.com/example-thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "Hello World in 15 Programming Languages - YouTube",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://www.youtube.com/watch?v=tRUsXTbixIE",
+          "type": "string"
+        },
+        "views": {
+          "example": "118",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.VideosResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/brave.SearchPagination"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/brave.VideoResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "brave.imagesResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/brave.ImagesResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.newsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/brave.NewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/brave.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/brave.SuggestResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "brave.videosResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/brave.VideosResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/brave/images": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Brave image search results for a query string. Locale defaults to country=us and lang=en-us. Results are fetched from public Brave Search image HTML and return 503 when Brave serves a challenge page or unusable HTML.",
+        "operationId": "brave-images",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Zero-based Brave result page; defaults to 0",
+            "in": "query",
+            "minimum": 0,
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          },
+          {
+            "description": "Results to return; defaults to 10, clamped to 1..50",
+            "in": "query",
+            "maximum": 50,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Brave result country; defaults to us",
+            "enum": [
+              "all",
+              "ar",
+              "at",
+              "au",
+              "be",
+              "br",
+              "ca",
+              "ch",
+              "cl",
+              "cn",
+              "de",
+              "dk",
+              "es",
+              "fi",
+              "fr",
+              "gb",
+              "gr",
+              "hk",
+              "id",
+              "in",
+              "it",
+              "jp",
+              "kr",
+              "mx",
+              "my",
+              "nl",
+              "no",
+              "nz",
+              "ph",
+              "pl",
+              "pt",
+              "ru",
+              "sa",
+              "se",
+              "sg",
+              "tr",
+              "tw",
+              "us",
+              "za"
+            ],
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Brave UI language; defaults to en-us",
+            "enum": [
+              "de-de",
+              "en-ca",
+              "en-gb",
+              "en-in",
+              "en-us",
+              "fi-fi",
+              "fr-ca",
+              "fr-fr",
+              "ja-jp",
+              "pt-br",
+              "sq-al",
+              "sw-ke",
+              "zh-tw"
+            ],
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en-us"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/brave.imagesResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Brave upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Brave image results",
+        "tags": [
+          "brave"
+        ]
+      }
+    },
+    "/brave/news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Brave news search results for a query string. Locale defaults to country=us and lang=en-us. Results are fetched from public Brave Search news HTML and return 503 when Brave serves a challenge page or unusable HTML.",
+        "operationId": "brave-news",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Zero-based Brave result page; defaults to 0",
+            "in": "query",
+            "minimum": 0,
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          },
+          {
+            "description": "Results to return; defaults to 10, clamped to 1..50",
+            "in": "query",
+            "maximum": 50,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Brave result country; defaults to us",
+            "enum": [
+              "all",
+              "ar",
+              "at",
+              "au",
+              "be",
+              "br",
+              "ca",
+              "ch",
+              "cl",
+              "cn",
+              "de",
+              "dk",
+              "es",
+              "fi",
+              "fr",
+              "gb",
+              "gr",
+              "hk",
+              "id",
+              "in",
+              "it",
+              "jp",
+              "kr",
+              "mx",
+              "my",
+              "nl",
+              "no",
+              "nz",
+              "ph",
+              "pl",
+              "pt",
+              "ru",
+              "sa",
+              "se",
+              "sg",
+              "tr",
+              "tw",
+              "us",
+              "za"
+            ],
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Brave UI language; defaults to en-us",
+            "enum": [
+              "de-de",
+              "en-ca",
+              "en-gb",
+              "en-in",
+              "en-us",
+              "fi-fi",
+              "fr-ca",
+              "fr-fr",
+              "ja-jp",
+              "pt-br",
+              "sq-al",
+              "sw-ke",
+              "zh-tw"
+            ],
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en-us"
+          },
+          {
+            "description": "Preset time filter: any, day, week, month, year, or custom",
+            "enum": [
+              "any",
+              "day",
+              "week",
+              "month",
+              "year",
+              "custom"
+            ],
+            "in": "query",
+            "name": "time_range",
+            "type": "string"
+          },
+          {
+            "description": "Custom start date in YYYY-MM-DD; requires date_to",
+            "in": "query",
+            "name": "date_from",
+            "type": "string",
+            "x-example": "2026-03-01"
+          },
+          {
+            "description": "Custom end date in YYYY-MM-DD; requires date_from",
+            "in": "query",
+            "name": "date_to",
+            "type": "string",
+            "x-example": "2026-03-30"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/brave.newsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Brave upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Brave news results",
+        "tags": [
+          "brave"
+        ]
+      }
+    },
+    "/brave/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized web search results from Brave Search for a query string, along with offset-based pagination, related queries, discussions, videos, and the right-side knowledge card when Brave includes one. Use time_range for preset ranges or date_from/date_to for a custom YYYY-MM-DD range. Locale defaults to country=us and lang=en-us.",
+        "operationId": "brave-search",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Zero-based Brave result page",
+            "in": "query",
+            "minimum": 0,
+            "name": "offset",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Brave result country; defaults to us",
+            "enum": [
+              "all",
+              "ar",
+              "at",
+              "au",
+              "be",
+              "br",
+              "ca",
+              "ch",
+              "cl",
+              "cn",
+              "de",
+              "dk",
+              "es",
+              "fi",
+              "fr",
+              "gb",
+              "gr",
+              "hk",
+              "id",
+              "in",
+              "it",
+              "jp",
+              "kr",
+              "mx",
+              "my",
+              "nl",
+              "no",
+              "nz",
+              "ph",
+              "pl",
+              "pt",
+              "ru",
+              "sa",
+              "se",
+              "sg",
+              "tr",
+              "tw",
+              "us",
+              "za"
+            ],
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Brave UI language; defaults to en-us",
+            "enum": [
+              "de-de",
+              "en-ca",
+              "en-gb",
+              "en-in",
+              "en-us",
+              "fi-fi",
+              "fr-ca",
+              "fr-fr",
+              "ja-jp",
+              "pt-br",
+              "sq-al",
+              "sw-ke",
+              "zh-tw"
+            ],
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en-us"
+          },
+          {
+            "description": "Preset time filter: any, day, week, month, year, or custom",
+            "enum": [
+              "any",
+              "day",
+              "week",
+              "month",
+              "year",
+              "custom"
+            ],
+            "in": "query",
+            "name": "time_range",
+            "type": "string"
+          },
+          {
+            "description": "Custom start date in YYYY-MM-DD; requires date_to",
+            "in": "query",
+            "name": "date_from",
+            "type": "string",
+            "x-example": "2026-03-01"
+          },
+          {
+            "description": "Custom end date in YYYY-MM-DD; requires date_from",
+            "in": "query",
+            "name": "date_to",
+            "type": "string",
+            "x-example": "2026-03-30"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/brave.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Brave",
+        "tags": [
+          "brave"
+        ]
+      }
+    },
+    "/brave/suggest": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns Brave autosuggest query completions for a query prefix. Locale defaults to country=us and lang=en-us. Suggestions are fetched from public Brave Search suggest JSON and trimmed to the requested count. `rich=true` adds entity metadata (name, description, category, image) where Brave resolves a suggestion to a known entity.",
+        "operationId": "brave-suggest",
+        "parameters": [
+          {
+            "description": "Search query prefix",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Suggestions to return; defaults to 10, clamped to 1..12",
+            "in": "query",
+            "maximum": 12,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Brave result country; defaults to us",
+            "enum": [
+              "all",
+              "ar",
+              "at",
+              "au",
+              "be",
+              "br",
+              "ca",
+              "ch",
+              "cl",
+              "cn",
+              "de",
+              "dk",
+              "es",
+              "fi",
+              "fr",
+              "gb",
+              "gr",
+              "hk",
+              "id",
+              "in",
+              "it",
+              "jp",
+              "kr",
+              "mx",
+              "my",
+              "nl",
+              "no",
+              "nz",
+              "ph",
+              "pl",
+              "pt",
+              "ru",
+              "sa",
+              "se",
+              "sg",
+              "tr",
+              "tw",
+              "us",
+              "za"
+            ],
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Brave UI language; defaults to en-us",
+            "enum": [
+              "de-de",
+              "en-ca",
+              "en-gb",
+              "en-in",
+              "en-us",
+              "fi-fi",
+              "fr-ca",
+              "fr-fr",
+              "ja-jp",
+              "pt-br",
+              "sq-al",
+              "sw-ke",
+              "zh-tw"
+            ],
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en-us"
+          },
+          {
+            "description": "Add entity name, description, category, and image to suggestions Brave resolves to a known entity; defaults to false",
+            "in": "query",
+            "name": "rich",
+            "type": "boolean",
+            "x-example": false
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/brave.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Brave upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Suggest Brave search queries",
+        "tags": [
+          "brave"
+        ]
+      }
+    },
+    "/brave/videos": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized Brave video search results for a query string. Locale defaults to country=us and lang=en-us. Results are fetched from public Brave Search video HTML and return 503 when Brave serves a challenge page or unusable HTML.",
+        "operationId": "brave-videos",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Zero-based Brave result page; defaults to 0",
+            "in": "query",
+            "minimum": 0,
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          },
+          {
+            "description": "Results to return; defaults to 10, clamped to 1..50",
+            "in": "query",
+            "maximum": 50,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Brave result country; defaults to us",
+            "enum": [
+              "all",
+              "ar",
+              "at",
+              "au",
+              "be",
+              "br",
+              "ca",
+              "ch",
+              "cl",
+              "cn",
+              "de",
+              "dk",
+              "es",
+              "fi",
+              "fr",
+              "gb",
+              "gr",
+              "hk",
+              "id",
+              "in",
+              "it",
+              "jp",
+              "kr",
+              "mx",
+              "my",
+              "nl",
+              "no",
+              "nz",
+              "ph",
+              "pl",
+              "pt",
+              "ru",
+              "sa",
+              "se",
+              "sg",
+              "tr",
+              "tw",
+              "us",
+              "za"
+            ],
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "Brave UI language; defaults to en-us",
+            "enum": [
+              "de-de",
+              "en-ca",
+              "en-gb",
+              "en-in",
+              "en-us",
+              "fi-fi",
+              "fr-ca",
+              "fr-fr",
+              "ja-jp",
+              "pt-br",
+              "sq-al",
+              "sw-ke",
+              "zh-tw"
+            ],
+            "in": "query",
+            "name": "lang",
+            "type": "string",
+            "x-example": "en-us"
+          },
+          {
+            "description": "Preset time filter: any, day, week, month, year, or custom",
+            "enum": [
+              "any",
+              "day",
+              "week",
+              "month",
+              "year",
+              "custom"
+            ],
+            "in": "query",
+            "name": "time_range",
+            "type": "string"
+          },
+          {
+            "description": "Custom start date in YYYY-MM-DD; requires date_to",
+            "in": "query",
+            "name": "date_from",
+            "type": "string",
+            "x-example": "2026-03-01"
+          },
+          {
+            "description": "Custom end date in YYYY-MM-DD; requires date_from",
+            "in": "query",
+            "name": "date_to",
+            "type": "string",
+            "x-example": "2026-03-30"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/brave.videosResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Missing or invalid query",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "No results found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Brave upstream request failed",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search Brave video results",
+        "tags": [
+          "brave"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "brave"
+    }
+  ]
+}

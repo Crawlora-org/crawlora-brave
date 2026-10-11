@@ -1,0 +1,1133 @@
+{
+  "platform": "brave",
+  "operationCount": 5,
+  "operationIds": [
+    "brave-images",
+    "brave-news",
+    "brave-search",
+    "brave-suggest",
+    "brave-videos"
+  ],
+  "methods": {
+    "images": "brave-images",
+    "news": "brave-news",
+    "search": "brave-search",
+    "suggest": "brave-suggest",
+    "videos": "brave-videos"
+  },
+  "operations": {
+    "brave-images": {
+      "id": "brave-images",
+      "method": "GET",
+      "path": "/brave/images",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ]
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Zero-based Brave result page; defaults to 0",
+          "in": "query",
+          "minimum": 0,
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        },
+        {
+          "description": "Results to return; defaults to 10, clamped to 1..50",
+          "in": "query",
+          "maximum": 50,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Brave result country; defaults to us",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ],
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Brave UI language; defaults to en-us",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ],
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en-us"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "brave-news": {
+      "id": "brave-news",
+      "method": "GET",
+      "path": "/brave/news",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ]
+        },
+        {
+          "name": "time_range",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "any",
+            "day",
+            "week",
+            "month",
+            "year",
+            "custom"
+          ]
+        },
+        {
+          "name": "date_from",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "date_to",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Zero-based Brave result page; defaults to 0",
+          "in": "query",
+          "minimum": 0,
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        },
+        {
+          "description": "Results to return; defaults to 10, clamped to 1..50",
+          "in": "query",
+          "maximum": 50,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Brave result country; defaults to us",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ],
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Brave UI language; defaults to en-us",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ],
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en-us"
+        },
+        {
+          "description": "Preset time filter: any, day, week, month, year, or custom",
+          "enum": [
+            "any",
+            "day",
+            "week",
+            "month",
+            "year",
+            "custom"
+          ],
+          "in": "query",
+          "name": "time_range",
+          "type": "string"
+        },
+        {
+          "description": "Custom start date in YYYY-MM-DD; requires date_to",
+          "in": "query",
+          "name": "date_from",
+          "type": "string",
+          "x-example": "2026-03-01"
+        },
+        {
+          "description": "Custom end date in YYYY-MM-DD; requires date_from",
+          "in": "query",
+          "name": "date_to",
+          "type": "string",
+          "x-example": "2026-03-30"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "brave-search": {
+      "id": "brave-search",
+      "method": "GET",
+      "path": "/brave/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ]
+        },
+        {
+          "name": "time_range",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "any",
+            "day",
+            "week",
+            "month",
+            "year",
+            "custom"
+          ]
+        },
+        {
+          "name": "date_from",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "date_to",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Zero-based Brave result page",
+          "in": "query",
+          "minimum": 0,
+          "name": "offset",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Brave result country; defaults to us",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ],
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Brave UI language; defaults to en-us",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ],
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en-us"
+        },
+        {
+          "description": "Preset time filter: any, day, week, month, year, or custom",
+          "enum": [
+            "any",
+            "day",
+            "week",
+            "month",
+            "year",
+            "custom"
+          ],
+          "in": "query",
+          "name": "time_range",
+          "type": "string"
+        },
+        {
+          "description": "Custom start date in YYYY-MM-DD; requires date_to",
+          "in": "query",
+          "name": "date_from",
+          "type": "string",
+          "x-example": "2026-03-01"
+        },
+        {
+          "description": "Custom end date in YYYY-MM-DD; requires date_from",
+          "in": "query",
+          "name": "date_to",
+          "type": "string",
+          "x-example": "2026-03-30"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "brave-suggest": {
+      "id": "brave-suggest",
+      "method": "GET",
+      "path": "/brave/suggest",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ]
+        },
+        {
+          "name": "rich",
+          "in": "query",
+          "type": "boolean"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query prefix",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Suggestions to return; defaults to 10, clamped to 1..12",
+          "in": "query",
+          "maximum": 12,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Brave result country; defaults to us",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ],
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Brave UI language; defaults to en-us",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ],
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en-us"
+        },
+        {
+          "description": "Add entity name, description, category, and image to suggestions Brave resolves to a known entity; defaults to false",
+          "in": "query",
+          "name": "rich",
+          "type": "boolean",
+          "x-example": false
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "brave-videos": {
+      "id": "brave-videos",
+      "method": "GET",
+      "path": "/brave/videos",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ]
+        },
+        {
+          "name": "time_range",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "any",
+            "day",
+            "week",
+            "month",
+            "year",
+            "custom"
+          ]
+        },
+        {
+          "name": "date_from",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "date_to",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Zero-based Brave result page; defaults to 0",
+          "in": "query",
+          "minimum": 0,
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        },
+        {
+          "description": "Results to return; defaults to 10, clamped to 1..50",
+          "in": "query",
+          "maximum": 50,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Brave result country; defaults to us",
+          "enum": [
+            "all",
+            "ar",
+            "at",
+            "au",
+            "be",
+            "br",
+            "ca",
+            "ch",
+            "cl",
+            "cn",
+            "de",
+            "dk",
+            "es",
+            "fi",
+            "fr",
+            "gb",
+            "gr",
+            "hk",
+            "id",
+            "in",
+            "it",
+            "jp",
+            "kr",
+            "mx",
+            "my",
+            "nl",
+            "no",
+            "nz",
+            "ph",
+            "pl",
+            "pt",
+            "ru",
+            "sa",
+            "se",
+            "sg",
+            "tr",
+            "tw",
+            "us",
+            "za"
+          ],
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "us"
+        },
+        {
+          "description": "Brave UI language; defaults to en-us",
+          "enum": [
+            "de-de",
+            "en-ca",
+            "en-gb",
+            "en-in",
+            "en-us",
+            "fi-fi",
+            "fr-ca",
+            "fr-fr",
+            "ja-jp",
+            "pt-br",
+            "sq-al",
+            "sw-ke",
+            "zh-tw"
+          ],
+          "in": "query",
+          "name": "lang",
+          "type": "string",
+          "x-example": "en-us"
+        },
+        {
+          "description": "Preset time filter: any, day, week, month, year, or custom",
+          "enum": [
+            "any",
+            "day",
+            "week",
+            "month",
+            "year",
+            "custom"
+          ],
+          "in": "query",
+          "name": "time_range",
+          "type": "string"
+        },
+        {
+          "description": "Custom start date in YYYY-MM-DD; requires date_to",
+          "in": "query",
+          "name": "date_from",
+          "type": "string",
+          "x-example": "2026-03-01"
+        },
+        {
+          "description": "Custom end date in YYYY-MM-DD; requires date_from",
+          "in": "query",
+          "name": "date_to",
+          "type": "string",
+          "x-example": "2026-03-30"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}

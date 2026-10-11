@@ -1,0 +1,23 @@
+{
+  "async_class_name": "AsyncBraveClient",
+  "class_name": "BraveClient",
+  "contract_revision": "sha256:2548401e77b60108e6195aa3c83842dc0c1caa7f04e8c777b61ccab2ca397777",
+  "display_name": "Brave Search",
+  "general_sdk_version": "1.46.0-sdk.1",
+  "golang_module_name": "github.com/Crawlora-org/crawlora-brave",
+  "golang_version": "0.1.0",
+  "group_name": "brave",
+  "java_description": "Java client for Crawlora's hosted Brave Search API, with web, news, image, and video search plus query suggestions. Requires a Crawlora API key.",
+  "maven_artifact_id": "crawlora-brave",
+  "maven_group_id": "net.crawlora",
+  "module_name": "crawlora_brave",
+  "npm_name": "@crawlora-org/brave",
+  "php_package_name": "crawlora/brave",
+  "php_repository": "https://github.com/Crawlora-org/crawlora-brave",
+  "platform": "brave",
+  "python_name": "crawlora-brave",
+  "repository": "https://github.com/Crawlora-org/crawlora-brave",
+  "ruby_gem_name": "crawlora-brave",
+  "source_contract_sha256": "8f37412b34b49c443ff8c115dadaf9b6a2a82fd767af53137ce5e9f6b288ea20",
+  "version": "0.1.0"
+}
