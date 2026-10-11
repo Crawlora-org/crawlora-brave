@@ -1,6 +1,17 @@
 {
   "name": "crawlora/brave",
-  "description": "Brave Search client for the Crawlora hosted API",
+  "description": "Crawlora Brave Search API client with 5 endpoints for web, news, image, and video search plus query suggestions",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "web-scraping",
+    "brave",
+    "brave-search",
+    "web",
+    "news",
+    "image",
+    "video-search-query-suggestions"
+  ],
   "type": "library",
   "license": "MIT",
   "require": {

@@ -1,6 +1,6 @@
-# Crawlora Brave Search Ruby client
+# Crawlora Brave Search API client for Ruby (`crawlora-brave`)
 
-This gem calls the Crawlora hosted API at `https://api.crawlora.net/api/v1`. It does not call or scrape Brave Search directly. Requests require your Crawlora API key and use your account's service plan.
+This Ruby gem calls Crawlora's hosted Brave Search API at `https://api.crawlora.net/api/v1`. It exposes 5 endpoints covering web, news, image, and video search plus query suggestions; it does not call or scrape Brave Search directly. Requests require your Crawlora API key and use your account's service plan.
 
 ## Install
 
@@ -29,5 +29,17 @@ client.close
 ```
 
 Client options include `api_key`, `base_url`, and `timeout`. Ruby stdlib provides the HTTP and JSON support.
+
+## Supported Brave Search API endpoints
+
+Browse every route included in this gem. The [endpoint reference](https://github.com/Crawlora-org/crawlora-brave/blob/main/docs/usage.md) includes parameter and response details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/brave/images` | `brave-images` | Search Brave image results |
+| `GET` | `/brave/news` | `brave-news` | Search Brave news results |
+| `GET` | `/brave/search` | `brave-search` | Search Brave |
+| `GET` | `/brave/suggest` | `brave-suggest` | Suggest Brave search queries |
+| `GET` | `/brave/videos` | `brave-videos` | Search Brave video results |
 
 See [Crawlora](https://crawlora.net/?utm_source=rubygems&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-ruby-homepage), the [API documentation](https://crawlora.net/docs?utm_source=rubygems&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-ruby-api-docs), and [the package repository](https://github.com/Crawlora-org/crawlora-brave) for account setup, the API operation reference, and release history.

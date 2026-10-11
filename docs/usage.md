@@ -1,6 +1,6 @@
-# Brave Search client usage
+# Brave Search API endpoint reference and client usage
 
-The `@crawlora-org/brave` and `crawlora-brave` packages call Crawlora's hosted API. Set `CRAWLORA_API_KEY` to a key for your Crawlora account before making requests. Service usage is billed under that account. These clients do not run a browser or scrape Brave Search locally; Crawlora is independent from and not endorsed by Brave Search or its owners.
+This reference lists all 5 public Brave Search API endpoints exposed by the `@crawlora-org/brave` and `crawlora-brave` packages, covering web, news, image, and video search plus query suggestions. The clients call Crawlora's hosted API. Set `CRAWLORA_API_KEY` to a key for your Crawlora account before making requests. Service usage is billed under that account. These clients do not run a browser or scrape Brave Search locally; Crawlora is independent from and not endorsed by Brave Search or its owners.
 
 The package tracks the public API contract revision `sha256:2548401e77b60108e6195aa3c83842dc0c1caa7f04e8c777b61ccab2ca397777` bundled with release `0.1.1`. Maintainers can preview daily contract updates with the repository's `Sync live API contract` workflow; unchanged contracts do not produce package releases.
 
