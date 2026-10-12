@@ -4,7 +4,7 @@
   "description": "Crawlora Brave Search API client with 5 endpoints for web, news, image, and video search plus query suggestions",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-brave/issues" },
-  "keywords": ["crawlora", "api-client", "web-scraping", "brave", "brave-search", "web", "news", "image", "video-search-query-suggestions"],
+  "keywords": ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "brave", "brave-search", "brave-api", "brave-search-api", "brave-scraper", "brave-search-scraper", "brave-data", "brave-search-data", "brave-web", "brave-news", "brave-image", "brave-video-search", "brave-query-suggestions"],
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
