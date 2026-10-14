@@ -7,7 +7,7 @@ from .async_client import AsyncCrawloraClient
 class BraveClient(CrawloraClient):
     """Synchronous Brave Search API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-brave-python/0.1.1')
+        kwargs.setdefault('user_agent', 'crawlora-brave-python/0.2.0')
         super().__init__(*args, **kwargs)
 
     def images(self, **params: Any) -> Any:
@@ -43,7 +43,7 @@ class BraveClient(CrawloraClient):
 class AsyncBraveClient(AsyncCrawloraClient):
     """Asynchronous Brave Search API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-brave-python/0.1.1')
+        kwargs.setdefault('user_agent', 'crawlora-brave-python/0.2.0')
         super().__init__(*args, **kwargs)
 
     async def images(self, **params: Any) -> Any:

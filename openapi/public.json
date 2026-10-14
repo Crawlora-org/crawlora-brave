@@ -20,50 +20,62 @@
     "brave.Discussion": {
       "properties": {
         "age": {
+          "description": "When the thread was posted, as Brave shows it.",
           "example": "October 24, 2024",
           "type": "string"
         },
         "comment_count": {
+          "description": "Number of replies Brave shows for the thread. Omitted when Brave shows none.",
           "example": 30,
           "type": "integer"
         },
         "description": {
+          "description": "Short excerpt of the thread as Brave shows it.",
           "example": "I have free time from highschool and want to get into coding, and tips on diving in and learning.",
           "type": "string"
         },
         "favicon": {
+          "description": "URL of the site's favicon as Brave serves it.",
           "example": "https://imgs.search.brave.com/example-reddit.ico",
           "type": "string"
         },
         "forum": {
+          "description": "Forum or subreddit the thread belongs to, for example `r/pythontips`.",
           "example": "r/pythontips",
           "type": "string"
         },
         "hostname": {
+          "description": "Host name of the site hosting the thread.",
           "example": "www.reddit.com",
           "type": "string"
         },
         "path": {
+          "description": "Breadcrumb-style path of the thread URL as Brave shows it.",
           "example": "r > pythontips > comments > 1gav6bm > how_to_learn_python",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the discussion in the discussions block, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "score": {
+          "description": "Vote score of the thread. Omitted when Brave shows none.",
           "example": 25,
           "type": "integer"
         },
         "title": {
+          "description": "Title of the forum thread or question.",
           "example": "How to learn python",
           "type": "string"
         },
         "top_comment": {
+          "description": "Text of the top comment Brave shows for the thread.",
           "example": "r/learnpython",
           "type": "string"
         },
         "url": {
+          "description": "URL of the discussion thread.",
           "example": "https://www.reddit.com/r/pythontips/comments/1gav6bm/how_to_learn_python/",
           "type": "string"
         }
@@ -73,38 +85,47 @@
     "brave.ImageResult": {
       "properties": {
         "age": {
+          "description": "Date or time associated with the image page, as Brave shows it.",
           "example": "2026-05-16T12:01:29Z",
           "type": "string"
         },
         "height": {
+          "description": "Image height as Brave reports it.",
           "example": 1184,
           "type": "integer"
         },
         "image_url": {
+          "description": "URL of the full-size image.",
           "example": "https://example.com/openai.jpg",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the image across all result pages, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "source": {
+          "description": "Site the image comes from, for example `area17.com`.",
           "example": "area17.com",
           "type": "string"
         },
         "thumbnail": {
+          "description": "URL of the image thumbnail served by Brave.",
           "example": "https://imgs.search.brave.com/example",
           "type": "string"
         },
         "title": {
+          "description": "Image title as shown on the Brave results page.",
           "example": "OpenAI colors mobile 08",
           "type": "string"
         },
         "url": {
+          "description": "URL of the page the image appears on.",
           "example": "https://area17.com/clients/openai",
           "type": "string"
         },
         "width": {
+          "description": "Image width as Brave reports it.",
           "example": 1000,
           "type": "integer"
         }
@@ -114,9 +135,15 @@
     "brave.ImagesResponse": {
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/brave.SearchPagination"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.SearchPagination"
+            }
+          ],
+          "description": "Paging information for this response."
         },
         "results": {
+          "description": "Image results in Brave's order.",
           "items": {
             "$ref": "#/definitions/brave.ImageResult"
           },
@@ -128,29 +155,40 @@
     "brave.KnowledgeCard": {
       "properties": {
         "category": {
+          "description": "Kind of entity the card describes, for example `computer program`.",
           "example": "computer program",
           "type": "string"
         },
         "description": {
+          "description": "One-line description of the entity.",
           "example": "computer program that produces the message \"Hello, world!\", often used to illustrate the basic syntax of a programming language",
           "type": "string"
         },
         "image": {
+          "description": "URL of the card's image.",
           "example": "https://imgs.search.brave.com/example-card.png",
           "type": "string"
         },
         "long_description": {
+          "description": "Longer description of the entity.",
           "example": "A \"Hello, World!\" program is usually a simple computer program that displays on the screen a message similar to \"Hello, World!\".",
           "type": "string"
         },
         "provider": {
-          "$ref": "#/definitions/brave.KnowledgeCardProvider"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.KnowledgeCardProvider"
+            }
+          ],
+          "description": "Source Brave credits for the card."
         },
         "title": {
+          "description": "Name of the entity or topic the card is about.",
           "example": "\"Hello, World!\" program",
           "type": "string"
         },
         "url": {
+          "description": "URL of the source page the card draws on.",
           "example": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program",
           "type": "string"
         }
@@ -160,14 +198,17 @@
     "brave.KnowledgeCardProvider": {
       "properties": {
         "icon": {
+          "description": "URL of the provider's icon.",
           "example": "https://imgs.search.brave.com/example-provider.ico",
           "type": "string"
         },
         "name": {
+          "description": "Name of the provider, for example `Wikipedia`.",
           "example": "Wikipedia",
           "type": "string"
         },
         "url": {
+          "description": "URL of the provider's page for the entity.",
           "example": "https://en.wikipedia.org/wiki/%22Hello,_World!%22_program",
           "type": "string"
         }
@@ -177,9 +218,15 @@
     "brave.NewsResponse": {
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/brave.SearchPagination"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.SearchPagination"
+            }
+          ],
+          "description": "Paging information for this response."
         },
         "results": {
+          "description": "News results in Brave's order.",
           "items": {
             "$ref": "#/definitions/brave.NewsResult"
           },
@@ -191,42 +238,52 @@
     "brave.NewsResult": {
       "properties": {
         "age": {
+          "description": "How long ago the article was published, as Brave shows it.",
           "example": "2 hours ago",
           "type": "string"
         },
         "description": {
+          "description": "Article snippet as shown on the Brave results page.",
           "example": "OpenAI announced an update.",
           "type": "string"
         },
         "favicon": {
+          "description": "URL of the publisher's favicon as Brave serves it.",
           "example": "https://imgs.search.brave.com/example.ico",
           "type": "string"
         },
         "hostname": {
+          "description": "Host name of the article URL.",
           "example": "www.example.com",
           "type": "string"
         },
         "path": {
+          "description": "Breadcrumb-style path of the article URL as Brave shows it.",
           "example": "technology > ai",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the article across all result pages, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "source": {
+          "description": "Name of the publication, for example `Reuters`.",
           "example": "Reuters",
           "type": "string"
         },
         "thumbnail": {
+          "description": "URL of the article thumbnail.",
           "example": "https://imgs.search.brave.com/example-thumb.jpg",
           "type": "string"
         },
         "title": {
+          "description": "Article headline as shown on the Brave results page.",
           "example": "OpenAI announces update",
           "type": "string"
         },
         "url": {
+          "description": "URL of the news article.",
           "example": "https://example.com/openai-news",
           "type": "string"
         }
@@ -236,14 +293,17 @@
     "brave.SearchPagination": {
       "properties": {
         "next_offset": {
+          "description": "Offset to request the next page. Omitted when there is no next page.",
           "example": 1,
           "type": "integer"
         },
         "offset": {
+          "description": "Zero-based page offset of this response.",
           "example": 0,
           "type": "integer"
         },
         "previous_offset": {
+          "description": "Offset to request the previous page. Omitted on the first page.",
           "example": 0,
           "type": "integer"
         }
@@ -253,18 +313,30 @@
     "brave.SearchResponse": {
       "properties": {
         "discussions": {
+          "description": "Forum and Q&A discussions Brave shows for the query. Omitted when there are none.",
           "items": {
             "$ref": "#/definitions/brave.Discussion"
           },
           "type": "array"
         },
         "knowledge_card": {
-          "$ref": "#/definitions/brave.KnowledgeCard"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.KnowledgeCard"
+            }
+          ],
+          "description": "Knowledge card Brave shows for the query. Omitted when there is none."
         },
         "pagination": {
-          "$ref": "#/definitions/brave.SearchPagination"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.SearchPagination"
+            }
+          ],
+          "description": "Paging information for this response."
         },
         "related_queries": {
+          "description": "Related searches Brave suggests for the query.",
           "example": [
             "hello world anime",
             "hello world code"
@@ -275,12 +347,14 @@
           "type": "array"
         },
         "results": {
+          "description": "Organic web results in Brave's order.",
           "items": {
             "$ref": "#/definitions/brave.SearchResult"
           },
           "type": "array"
         },
         "videos": {
+          "description": "Video results Brave shows for the query. Omitted when there are none.",
           "items": {
             "$ref": "#/definitions/brave.VideoResult"
           },
@@ -292,34 +366,42 @@
     "brave.SearchResult": {
       "properties": {
         "age": {
+          "description": "How old the page is, as Brave shows it. Omitted when Brave shows none.",
           "example": "1 day ago",
           "type": "string"
         },
         "description": {
+          "description": "Result snippet as shown on the Brave results page.",
           "example": "OpenAI helps you build and deploy AI systems.",
           "type": "string"
         },
         "favicon": {
+          "description": "URL of the site's favicon as Brave serves it.",
           "example": "https://imgs.search.brave.com/example.ico",
           "type": "string"
         },
         "hostname": {
+          "description": "Host name of the result URL.",
           "example": "openai.com",
           "type": "string"
         },
         "path": {
+          "description": "Breadcrumb-style path of the result URL as Brave shows it.",
           "example": "research > index",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the result on the page, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "title": {
+          "description": "Result title as shown on the Brave results page.",
           "example": "OpenAI",
           "type": "string"
         },
         "url": {
+          "description": "URL of the result page.",
           "example": "https://openai.com/",
           "type": "string"
         }
@@ -329,10 +411,12 @@
     "brave.SuggestResponse": {
       "properties": {
         "query": {
+          "description": "Query prefix the suggestions were requested for.",
           "example": "openai",
           "type": "string"
         },
         "suggestions": {
+          "description": "Search suggestions Brave returned, in order.",
           "items": {
             "$ref": "#/definitions/brave.SuggestionResult"
           },
@@ -344,22 +428,27 @@
     "brave.SuggestionEntity": {
       "properties": {
         "category": {
+          "description": "Kind of entity, for example `person`.",
           "example": "person",
           "type": "string"
         },
         "description": {
+          "description": "Short description of the entity.",
           "example": "American singer-songwriter (born 1989)",
           "type": "string"
         },
         "image_url": {
+          "description": "URL of the entity's image.",
           "example": "https://imgs.search.brave.com/example.jpg",
           "type": "string"
         },
         "logo": {
+          "description": "Whether Brave marks the entity image as a logo.",
           "example": false,
           "type": "boolean"
         },
         "name": {
+          "description": "Name of the entity.",
           "example": "Taylor Swift",
           "type": "string"
         }
@@ -369,13 +458,20 @@
     "brave.SuggestionResult": {
       "properties": {
         "entity": {
-          "$ref": "#/definitions/brave.SuggestionEntity"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.SuggestionEntity"
+            }
+          ],
+          "description": "Entity Brave matched to the suggestion. Only set when the request used `rich=true` and Brave recognises an entity."
         },
         "position": {
+          "description": "Rank of the suggestion in the list, starting at 1.",
           "example": 1,
           "type": "integer"
         },
         "query": {
+          "description": "Suggested search query.",
           "example": "openai api",
           "type": "string"
         }
@@ -385,54 +481,67 @@
     "brave.VideoResult": {
       "properties": {
         "age": {
+          "description": "When the video was published, as Brave shows it.",
           "example": "March 24, 2024",
           "type": "string"
         },
         "creator": {
+          "description": "Channel or creator that published the video.",
           "example": "Train To Code",
           "type": "string"
         },
         "description": {
+          "description": "Video description snippet as Brave shows it.",
           "example": "Introducing you to 15 of the most popular programming languages in the world, by writing hello world to the console.",
           "type": "string"
         },
         "duration": {
+          "description": "Video length as Brave shows it, for example `08:47`.",
           "example": "08:47",
           "type": "string"
         },
         "favicon": {
+          "description": "URL of the hosting site's favicon as Brave serves it.",
           "example": "https://imgs.search.brave.com/example-youtube.ico",
           "type": "string"
         },
         "hostname": {
+          "description": "Host name of the video URL.",
           "example": "www.youtube.com",
           "type": "string"
         },
         "path": {
+          "description": "Path of the video URL as Brave shows it.",
           "example": "watch",
           "type": "string"
         },
         "platform": {
+          "description": "Platform hosting the video, for example `YouTube`.",
           "example": "YouTube",
           "type": "string"
         },
         "position": {
+          "description": "Rank of the video among the results, starting at 1; continues across pages in video searches.",
           "example": 1,
           "type": "integer"
         },
         "thumbnail": {
+          "description": "URL of the video thumbnail.",
           "example": "https://imgs.search.brave.com/example-thumb.jpg",
           "type": "string"
         },
         "title": {
+          "description": "Video title as shown on the Brave results page.",
           "example": "Hello World in 15 Programming Languages - YouTube",
           "type": "string"
         },
         "url": {
+          "description": "URL of the video page.",
           "example": "https://www.youtube.com/watch?v=tRUsXTbixIE",
           "type": "string"
         },
         "views": {
+          "description": "View count as Brave shows it.",
           "example": "118",
           "type": "string"
         }
@@ -442,9 +551,15 @@
     "brave.VideosResponse": {
       "properties": {
         "pagination": {
-          "$ref": "#/definitions/brave.SearchPagination"
+          "allOf": [
+            {
+              "$ref": "#/definitions/brave.SearchPagination"
+            }
+          ],
+          "description": "Paging information for this response."
         },
         "results": {
+          "description": "Video results in Brave's order.",
           "items": {
             "$ref": "#/definitions/brave.VideoResult"
           },
@@ -561,7 +676,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Brave image search results for a query string. Locale defaults to country=us and lang=en-us. Results are fetched from public Brave Search image HTML and return 503 when Brave serves a challenge page or unusable HTML.",
+        "description": "Returns Brave image search results for a query string. Locale defaults to country=us and lang=en-us. Returns 503 when Brave serves a challenge page or unusable results.",
         "operationId": "brave-images",
         "parameters": [
           {
@@ -717,7 +832,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Brave news search results for a query string. Locale defaults to country=us and lang=en-us. Results are fetched from public Brave Search news HTML and return 503 when Brave serves a challenge page or unusable HTML.",
+        "description": "Returns Brave news search results for a query string. Locale defaults to country=us and lang=en-us. Returns 503 when Brave serves a challenge page or unusable results.",
         "operationId": "brave-news",
         "parameters": [
           {
@@ -901,7 +1016,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized web search results from Brave Search for a query string, along with offset-based pagination, related queries, discussions, videos, and the right-side knowledge card when Brave includes one. Use time_range for preset ranges or date_from/date_to for a custom YYYY-MM-DD range. Locale defaults to country=us and lang=en-us.",
+        "description": "Returns web search results from Brave Search for a query string, along with offset-based pagination, related queries, discussions, videos, and the right-side knowledge card when Brave includes one. Use time_range for preset ranges or date_from/date_to for a custom YYYY-MM-DD range. Locale defaults to country=us and lang=en-us.",
         "operationId": "brave-search",
         "parameters": [
           {
@@ -1219,7 +1334,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized Brave video search results for a query string. Locale defaults to country=us and lang=en-us. Results are fetched from public Brave Search video HTML and return 503 when Brave serves a challenge page or unusable HTML.",
+        "description": "Returns Brave video search results for a query string. Locale defaults to country=us and lang=en-us. Returns 503 when Brave serves a challenge page or unusable results.",
         "operationId": "brave-videos",
         "parameters": [
           {

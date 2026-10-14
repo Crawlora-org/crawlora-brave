@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/brave",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Crawlora Brave Search API client with 5 endpoints for web, news, image, and video search plus query suggestions",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=brave-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-brave/issues" },

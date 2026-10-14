@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-brave"
-version = "0.1.1"
+version = "0.2.0"
 description = "Crawlora Brave Search API client with 5 endpoints for web, news, image, and video search plus query suggestions"
 readme = "README.md"
 keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "brave", "brave-search", "brave-api", "brave-search-api", "brave-scraper", "brave-search-scraper", "brave-data", "brave-search-data", "brave-web", "brave-news", "brave-image", "brave-video-search", "brave-query-suggestions"]

@@ -6,10 +6,10 @@ from .operations import OPERATION_COUNT, OPERATION_IDS, PLATFORM
 
 Client = BraveClient
 AsyncClient = AsyncBraveClient
-__version__ = '0.1.1'
+__version__ = '0.2.0'
 DISPLAY_NAME = 'Brave Search'
 PLATFORM = 'brave'
-CONTRACT_REVISION = 'sha256:2548401e77b60108e6195aa3c83842dc0c1caa7f04e8c777b61ccab2ca397777'
+CONTRACT_REVISION = 'sha256:18fad8582a4a32958daafc4d0e435a8917a78048abc17daa817169a107ea2fba'
 
 __all__ = [
     "BraveClient", "AsyncBraveClient", "Client", "AsyncClient",

@@ -8,7 +8,7 @@ Official Crawlora client packages for the hosted Brave Search API. Access 5 API 
 - Python: [`crawlora-brave`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-brave`](go.mod)
 - Ruby: [`crawlora-brave`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-brave:0.1.1`](java/README.md)
+- Java: [`net.crawlora:crawlora-brave:0.2.0`](java/README.md)
 - PHP: [`crawlora/brave`](php/README.md)
 
 For installation and runnable examples, use the README for your language. See the [API endpoint and parameter reference](docs/usage.md) for shared operation details.
